@@ -11,25 +11,33 @@ description: >
     'sponsor' status to allow them to modify the world.
 commands:
     rgstatus:
-        description: Display [player]''s RG status
+        description: Display the RG status of [player]
         usage: /<command> [player]
-        permission: ravenousnessgames.rgadmin
+        permission: ravenousnessgames.admin
     rgadmin:
-        description: Toggle the RG admin status of [player]
+        description: Make [player] an admin
         usage: /<command> [player]
-        permission: ravenousnessgames.rgsuperadmin
+        permission: ravenousnessgames.superadmin
     rgsponsor:
-        description: Toggle the RG sponsor status of [player]
+        description: Make [player] a sponsor
         usage: /<command> [player]
-        permission: ravenousnessgames.rgadmin
-    rgstart:
-        description: Start a round of RavenousnessGames
+        permission: ravenousnessgames.admin
+    rgspectator:
+        description: Make [player] a spectator
+        usage: /<command> [player]
+        permission: ravenousnessgames.admin
+    rgcompetitor:
+        description: Make [player] a competitor
+        usage: /<command> [player]
+        permission: ravenousnessgames.admin
+    rgbegin:
+        description: Begin a round of RavenousnessGames
         usage: /<command>
-        permission: ravenousnessgames.rgadmin
+        permission: ravenousnessgames.admin
     rgend:
         description: End a round of RavenousnessGames
         usage: /<command>
-        permission: ravenousnessgames.rgadmin
+        permission: ravenousnessgames.admin
 permissions:
     ravenousnessgames.*:
         description: Gives all RG permissions
@@ -38,9 +46,9 @@ permissions:
             ravenousnessgames.superadmin: true
     ravenousnessgames.admin:
         description: >
-            Allows checking and changing the status of players and
-            starting and ending rounds.
+            Allows checking and changing the status of players,
+            starting and ending rounds, and seeing invisible players
         default: op
     ravenousnessgames.superadmin:
-        description: Allows toggling admin status of players.
+        description: Allows toggling admin status of players
         default: op
