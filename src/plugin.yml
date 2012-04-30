@@ -1,3 +1,46 @@
 name: RavenousnessGames
 main: net.calzoneman.RavenousnessGames.RavenousnessGames
 version: 1.0
+description: >
+    RavenousnessGames assists server admins who wish to run
+    Hunger-Games-style survival competitions. All online players are
+    classified as either competitors or admins. Competitors are further
+    classified as either alive or dead. Dead competitors are prevented
+    from making modifications to the world, made invisible, and given
+    the ability to fly. Dead competitors can optionally be given
+    'sponsor' status to allow them to modify the world.
+commands:
+    rgstatus:
+        description: Display [player]''s RG status
+        usage: /<command> [player]
+        permission: ravenousnessgames.rgadmin
+    rgadmin:
+        description: Toggle the RG admin status of [player]
+        usage: /<command> [player]
+        permission: ravenousnessgames.rgsuperadmin
+    rgsponsor:
+        description: Toggle the RG sponsor status of [player]
+        usage: /<command> [player]
+        permission: ravenousnessgames.rgadmin
+    rgstart:
+        description: Start a round of RavenousnessGames
+        usage: /<command>
+        permission: ravenousnessgames.rgadmin
+    rgend:
+        description: End a round of RavenousnessGames
+        usage: /<command>
+        permission: ravenousnessgames.rgadmin
+permissions:
+    ravenousnessgames.*:
+        description: Gives all RG permissions
+        children:
+            ravenousnessgames.admin: true
+            ravenousnessgames.superadmin: true
+    ravenousnessgames.admin:
+        description: >
+            Allows checking and changing the status of players and
+            starting and ending rounds.
+        default: op
+    ravenousnessgames.superadmin:
+        description: Allows toggling admin status of players.
+        default: op
